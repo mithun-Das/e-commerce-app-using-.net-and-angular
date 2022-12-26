@@ -1,4 +1,13 @@
 
 -------------> Section-2: Part-7 -> Running the API using the DotNet CLI <-------------
 
--> A valid https certificate comes with dotnet sdk 
+-> A valid https certificate comes with dotnet sdk
+
+
+-------------> Section-2: Part-8 -> .Net 6 Project changes <-------------
+
+-> What are the obj and bin folders (created by Visual Studio) used for?
+   src: https://stackoverflow.com/questions/5308491/what-are-the-obj-and-bin-folders-created-by-visual-studio-used-for#:~:text=The%20obj%20folder%20holds%20object,to%20produce%20the%20final%20executable.
+
+-> Global Using Directives in C#
+   src: https://code-maze.com/csharp-global-using-directives/
