@@ -54,3 +54,8 @@
 ->  Future Task
 
 	-> What is the function of DbContextOptions
+
+
+-------------> Section-2: Part-13 -> Adding a connection string <-------------
+
+-> GetConnectionString => Shorthand for GetSection("ConnectionStrings")[name].
