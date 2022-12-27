@@ -34,3 +34,23 @@
 -> Future Task
 
 	-> Learn more about the hosting model
+
+
+
+-------------> Section-2: Part-12 -> Setting up Entity Framework <-------------
+
+-> We don't query our database directly in ASP.NET Core, we typically go through or via an object relational mapper.
+   that abstracts the database away from our code.
+   And this comes with several advantages, it's certainly one of the advantages is it allows us to very
+   easily swap the database provider that we're using.
+
+-> StoreContext : DbContext => A DbContext instance represents a session with the database and can be used to
+   query and save instances of your entities. DbContext is a combination of the
+   Unit Of Work and Repository patterns.
+
+-> DbSet<Product> Products => A DbSet<TEntity> can be used to query and save instance of Product.
+   Linq queries against a DbSet<TEntity> will be translated into queries against the database.
+
+->  Future Task
+
+	-> What is the function of DbContextOptions
