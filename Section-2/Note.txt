@@ -11,3 +11,26 @@
 
 -> Global Using Directives in C#
    src: https://code-maze.com/csharp-global-using-directives/
+
+
+-------------> Section-2: Part-9 -> Reviewing the Web API startup files <-------------
+
+-> A Console application usually has a Main() method
+   Why do we have a Main() method in ASP.NET core Web application	
+   ASP.NET Core application starts as a Console application
+   The Main() method configures ASP.NET Core and starts it and at that point it becomes an ASP.NET Core Web application.
+
+-> The Build() method builds the web host that host the ASP.NET Core Web Application
+-> The Run() method run the web application and starts listening the upcoming requests
+-> CreateHostBuilder() method build the host
+
+-> Kestrel server is given by SDK
+
+-> What happens when a .net web application executes?
+   src: https://www.youtube.com/watch?v=X60RR34gKy0
+   src: https://www.youtube.com/watch?v=ydR2jd3ZaEA
+
+
+-> Future Task
+
+	-> Learn more about the hosting model
