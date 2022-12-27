@@ -69,3 +69,9 @@
    The migrations feature in EF Core provides a way to incrementally update the database schema to keep it in sync with the application's data model
    while preserving existing data in the database.
    Migrations Overview => https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli
+
+
+
+----------> Section-2: Part-15 -> Updating the database <----------
+
+-> dotnet ef database update(in dotnet ef tool) <=> Update-Database (in Visual Studio)
