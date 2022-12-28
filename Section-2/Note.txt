@@ -75,3 +75,45 @@
 ----------> Section-2: Part-15 -> Updating the database <----------
 
 -> dotnet ef database update(in dotnet ef tool) <=> Update-Database (in Visual Studio)
+
+
+----------> Section-2: Part-16 -> Reading the data from the Database in the API <----------
+
+-> builder.Services.AddDbContext<StoreContext>
+    (x => x.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+   Here service lifetime of AddDbContext is scoped
+
+-> when a request comes in, it hits our products controller.
+   Then a new instance of this products controller is going to be created.
+   And when this controller is created, it's going to see what its dependencies are.
+   And in this case, it's got a dependency on the store context.
+   And this is going to create a new instance of the store context that we can then work with.
+   Now, ASP.NET core controls the lifetime of how long this store context is available and when we added
+   this inside our Start-Up class.
+
+-> ActionResult => And this means it's going to be some kind of HTTP response status.
+   So it's going to be an OK response, which would be a 200 or it could be a 400, which would be a bad request.
+
+-> var products = _context.Products.ToList();
+   we've done here is Synchronoss request, which means that our request, the thread that our request
+   is executing on is going to be blocked until this method has been completed and it's not going to do anything else.
+   It's just going to wait until the request to sql has finished.
+
+   Now, it's no problem in a tiny little application that we've got at the moment, it's perfectly fine.
+   But in terms of scalability, then what we really want to do, especially for things like query our
+   database where we don't have control of how long it's going to take.
+   And if this query was complicated, that it could take a few seconds, possibly tens of seconds to return the results.
+   And we don't want our request hanging around, waiting for that to come back if it could be doing other things.
+   So what we can do is use an asynchronous version of this method.
+   So instead of waiting for this to come back, it passes off the request to a delegate to somebody else.
+   That delegate is going to go off and query the database.
+   And in the meantime, the request that this thread is running on can go and handle other things.
+   And once the request is completed, the delegate has completed its task.
+   Then it notifies our method here, our request here, and then it picks up the results and it carries on.
+
+
+-> Future Task
+
+	-> Learn more about Task, async, await
+	-> And also what ToListAsync means
