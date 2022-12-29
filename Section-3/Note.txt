@@ -1,0 +1,15 @@
+
+------------------> Section-3: Part-23 -> Adding a Repository and Interface <------------------
+
+-> GetProductByIdAsync => Async only entier, it's just a naming convention, and it's just so that we can easily identify that
+			  this is going to return a task and we can await this particular method when we call it in the controller.
+
+-> IReadOnlyList => we've been returning just the list when we return something or a list of something.
+		    But we can be more specific. And the list is a very generic list, objects that supports lots of different things with a list,
+ 		    we can add items to it, we can remove items from it.
+		    And and IReadOnly type of list is very much more specific.
+		    We can only ever read, as the name implies, from what we're sending back here.
+		    And because we're returning a list, we don't need the functionality that comes with a normal list that
+		    allows us to add and remove items from it.
+		    So when we're returning something like this, we can be more specific about what we're returning and
+		    we're going to use an IReadOnly list in this case.
