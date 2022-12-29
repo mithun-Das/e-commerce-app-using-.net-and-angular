@@ -13,3 +13,14 @@
 		    allows us to add and remove items from it.
 		    So when we're returning something like this, we can be more specific about what we're returning and
 		    we're going to use an IReadOnly list in this case.
+
+
+------------------> Section-3: Part-26 -> Creating a new migration for the entities <------------------
+
+    public ProductType ProductType { get; set; }
+    public int ProductTypeId { get; set; }
+    public ProductBrand ProductBrand { get; set; }
+    public int ProductBrandId { get; set;}
+
+-> Here ProductTypeId and ProductBrandId was introduced as Foreign Key during Migration.
+   So by using this Naming convention helps to do that as well as EF recognize that 
