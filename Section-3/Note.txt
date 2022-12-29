@@ -23,4 +23,40 @@
     public int ProductBrandId { get; set;}
 
 -> Here ProductTypeId and ProductBrandId was introduced as Foreign Key during Migration.
-   So by using this Naming convention helps to do that as well as EF recognize that 
+   So by using this Naming convention helps to do that as well as EF recognize that.
+   If we would name it ProdBrdId, then it wouldn't work. Rather it would create another column name  ProductBrandId.
+   But we can handle this via Migration Configuration
+
+
+------------------> Section-3: Part-27 -> Configuring the migrations <------------------
+
+-> We could apply this config in context class.  But it will be large if we do that(We did that in dating app)
+
+-> For string => Instead of configuring the entity in the Migration Configuration(ProductConfiguration)
+                 by IsRequired, I made it non-nullable in the entity class since .net6 provides that feature.
+
+->         builder.HasOne(x => x.ProductBrand).WithMany()
+            .HasForeignKey(x => x.ProductBrandId);
+
+   We can apply this in config but EF has already took care of this which we have seen in previous migration
+   because this entity class is already been declared like that	
+   We can spicify what our entity or migration look like
+
+
+-> Future Task
+	
+	-> Learn more about Reflection
+		src: https://www.youtube.com/watch?v=y8-uq6Ur7Dc&list=PLAC325451207E3105&index=53
+		     https://www.youtube.com/watch?v=vHHd3GNOuXU&list=PLAC325451207E3105&index=54
+		     https://www.youtube.com/watch?v=s0eIgl5iqqQ&list=PLAC325451207E3105&index=55
+
+
+	->     protected override void OnModelCreating(ModelBuilder modelBuilder)
+    		{
+        		base.OnModelCreating(modelBuilder);
+        		modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+    		}
+
+	Learn more about this method. And then compare it with the dating app's OnModelCreating method
+
+	-> Validate if isRequired is necessary for int/decimal field
