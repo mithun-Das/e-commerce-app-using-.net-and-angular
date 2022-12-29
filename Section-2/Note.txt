@@ -117,3 +117,14 @@
 
 	-> Learn more about Task, async, await
 	-> And also what ToListAsync means
+
+
+----------> Section-2: Part-20 -> Summary of section 2 <----------
+
+-> Future Task
+
+	-> Code First approach
+	-> Database First approach
+	src: https://www.youtube.com/watch?v=Z7713GBhi4k&list=PL6n9fhu94yhUPBSX-E2aJCnCR3-_6zBZx&index=1
+	src: https://www.youtube.com/watch?v=UNt3uWqMdMU&list=PL6n9fhu94yhUPBSX-E2aJCnCR3-_6zBZx&index=2
+	src: https://www.youtube.com/watch?v=kbH-rqMl8cE&list=PL6n9fhu94yhUPBSX-E2aJCnCR3-_6zBZx&index=3
