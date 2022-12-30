@@ -60,3 +60,39 @@
 	Learn more about this method. And then compare it with the dating app's OnModelCreating method
 
 	-> Validate if isRequired is necessary for int/decimal field
+
+
+
+------------------> Section-3: Part-28 -> Applying the migrations and creating the Database at app startup <------------------
+
+
+-> Instead of "Update Database" command, we are going to apply the latest migration via code.
+   And this is still Microsoft's currently recommended way of doing such a thing.
+   https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137148#questions/12369060
+   https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137148#questions/11639070
+
+-> Future Task
+
+	Learn More about the following code
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+    
+    try
+    {
+        var context = services.GetRequiredService<StoreContext>();
+        await context.Database.MigrateAsync();
+    }
+    catch (Exception ex)
+    {
+        var logger = loggerFactory.CreateLogger<Program>();
+        logger.LogError(ex, "An error occured during migration");
+    }
+};
+
+
+
+
+
