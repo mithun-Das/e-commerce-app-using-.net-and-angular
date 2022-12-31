@@ -94,5 +94,19 @@ using (var scope = app.Services.CreateScope())
 
 
 
+------------------> Section-3: Part-29 -> Adding Seed data <------------------
 
+-> Proper way of writing filepath as parameter in C#/.NET
+   src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137150#questions/18912348
+
+-> Secure implementation of seed insertion for user sensitive data
+   src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137150#questions/18912364
+
+-> Why loop for adding each item in context as well as ProductBrand entity?
+   src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137150#questions/18912424
+
+-> Future Task
+
+	-> I don't like the implementation for seed insert in this way.
+	   In case of user sensitive data, what is the proper way for seed insertion
 
