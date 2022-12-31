@@ -1,11 +1,9 @@
-﻿using Infrastructure.Data;
-using Core.Entities;
+﻿using Core.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Core.Interfaces;
+using System.Threading;
 
 namespace API.Controllers;
 
@@ -26,9 +24,9 @@ public class ProductsController : ControllerBase
     /// Get The Product List
     /// </Summary>
     [HttpGet]
-    public async Task<ActionResult<List<Product>>> GetProducts()
+    public async Task<ActionResult<List<Product>>> GetProducts(CancellationToken cancellationToken)
     {
-        var products = await _productRepository.GetProductsAsync();
+        var products = await _productRepository.GetProductsAsync(cancellationToken);
 
         return Ok(products);
     }
@@ -39,9 +37,9 @@ public class ProductsController : ControllerBase
     /// <param name="id"></param>
     /// <returns> Product with specific id </returns>
     [HttpGet("{id}")]
-    public async  Task<ActionResult<string>> GetProduct(int id)
+    public async  Task<ActionResult<string>> GetProduct(int id, CancellationToken cancellationToken)
     {
-        var product = await _productRepository.GetProductByIdAsync(id);
+        var product = await _productRepository.GetProductByIdAsync(id, cancellationToken);
 
         return Ok(product);
     }
@@ -50,9 +48,9 @@ public class ProductsController : ControllerBase
     /// Get The Product Brands
     /// </Summary>
     [HttpGet("brands")]
-    public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
+    public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands(CancellationToken cancellationToken)
     {
-        var productBrands = await _productRepository.GetProductBrandsAsync();
+        var productBrands = await _productRepository.GetProductBrandsAsync(cancellationToken);
 
         return Ok(productBrands);
     }
@@ -61,9 +59,9 @@ public class ProductsController : ControllerBase
     /// Get The Product Types
     /// </Summary>
     [HttpGet("types")]
-    public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductTypes()
+    public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductTypes(CancellationToken cancellationToken)
     {
-        var productTypes = await _productRepository.GetProductTypesAsync();
+        var productTypes = await _productRepository.GetProductTypesAsync(cancellationToken);
 
         return Ok(productTypes);
     }
