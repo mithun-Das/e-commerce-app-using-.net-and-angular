@@ -119,3 +119,18 @@ using (var scope = app.Services.CreateScope())
    But if we remove [ApiController] attribute then we receive 204 status
    API controller is actually doing for us there, it's actually doing some validation to make sure that the
    Route parameter here is actually an integer.
+
+
+------------------> Section-3: Part-31 -> Eager loading of navigation properties <------------------
+
+-> Microsoft.EntityFrameworkCore.Proxies
+   Using this lazy loaded can be done. But lazy loading is not recommended approach
+
+-> Loading Related Data
+   src: https://learn.microsoft.com/en-us/ef/core/querying/related-data/
+
+-> Entity Framework Core allows you to use the navigation properties in your model to load related entities. There are three common O/RM patterns used to load related data.
+
+   Eager loading means that the related data is loaded from the database as part of the initial query.
+   Explicit loading means that the related data is explicitly loaded from the database at a later time.
+   Lazy loading means that the related data is transparently loaded from the database when the navigation property is accessed.
