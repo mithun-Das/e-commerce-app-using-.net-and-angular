@@ -110,3 +110,12 @@ using (var scope = app.Services.CreateScope())
 	-> I don't like the implementation for seed insert in this way.
 	   In case of user sensitive data, what is the proper way for seed insertion
 
+
+
+------------------> Section-3: Part-30 -> Adding the code to get the product brands and types <------------------
+
+-> {{url}}/api/products/brands
+   For this postman call we get 400 status
+   But if we remove [ApiController] attribute then we receive 204 status
+   API controller is actually doing for us there, it's actually doing some validation to make sure that the
+   Route parameter here is actually an integer.

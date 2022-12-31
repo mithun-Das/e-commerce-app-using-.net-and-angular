@@ -46,5 +46,27 @@ public class ProductsController : ControllerBase
         return Ok(product);
     }
 
+    /// <Summary>
+    /// Get The Product Brands
+    /// </Summary>
+    [HttpGet("brands")]
+    public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
+    {
+        var productBrands = await _productRepository.GetProductBrandsAsync();
+
+        return Ok(productBrands);
+    }
+
+    /// <Summary>
+    /// Get The Product Types
+    /// </Summary>
+    [HttpGet("types")]
+    public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductTypes()
+    {
+        var productTypes = await _productRepository.GetProductTypesAsync();
+
+        return Ok(productTypes);
+    }
+
     #endregion
 }
