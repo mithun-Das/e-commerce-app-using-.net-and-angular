@@ -1,0 +1,12 @@
+
+------------------> Section-4: Part-34 -> Creating a Generic repository and interface <------------------
+
+-> public interface IGenericRepository<T> where T : BaseEntity
+   what we can also do is constrain this so that we can use certain types with this particular generic repository.
+   And the way that we do that is by specifying where.
+   And we say is a type of in this case, we only want this to be usable by classes that derive from our base entity.
+
+-> Future Task
+   
+	-> Learn more about generics
+	   src: https://learn.microsoft.com/en-us/dotnet/standard/generics/
