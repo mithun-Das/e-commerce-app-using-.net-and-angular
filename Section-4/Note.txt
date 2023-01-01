@@ -10,3 +10,9 @@
    
 	-> Learn more about generics
 	   src: https://learn.microsoft.com/en-us/dotnet/standard/generics/
+
+
+-------------> Section-4: Part-35 -> Implementing the methods in the Generic repository <-------------
+
+-> Set<T>()
+   Creates a <see cref="DbSet{TEntity}" /> that can be used to query and save instances of <typeparamref name="TEntity" />.

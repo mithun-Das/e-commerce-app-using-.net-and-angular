@@ -11,11 +11,17 @@ namespace API.Controllers;
 [ApiController]
 public class ProductsController : ControllerBase
 {
-    private readonly IProductRepository _productRepository;
+    private readonly IGenericRepository<Product> _productsRepo;
+    private readonly IGenericRepository<ProductBrand> _productBrandRepo;
+    private readonly IGenericRepository<ProductType> _productTypeRepo;
 
-    public ProductsController(IProductRepository productRepository) 
+    public ProductsController(IGenericRepository<Product> productsRepo,
+        IGenericRepository<ProductBrand> productBrandRepo,
+        IGenericRepository<ProductType> productTypeRepo)
     {
-        _productRepository = productRepository;
+        _productsRepo = productsRepo;
+        _productBrandRepo = productBrandRepo;
+        _productTypeRepo = productTypeRepo;
     }
 
     #region[GET Requests]
@@ -26,7 +32,7 @@ public class ProductsController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<Product>>> GetProducts(CancellationToken cancellationToken)
     {
-        var products = await _productRepository.GetProductsAsync(cancellationToken);
+        var products = await this._productsRepo.AllListAsync();
 
         return Ok(products);
     }
@@ -39,7 +45,7 @@ public class ProductsController : ControllerBase
     [HttpGet("{id}")]
     public async  Task<ActionResult<string>> GetProduct(int id, CancellationToken cancellationToken)
     {
-        var product = await _productRepository.GetProductByIdAsync(id, cancellationToken);
+        var product = await this._productsRepo.GetByIdAsync(id);
 
         return Ok(product);
     }
@@ -50,7 +56,7 @@ public class ProductsController : ControllerBase
     [HttpGet("brands")]
     public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands(CancellationToken cancellationToken)
     {
-        var productBrands = await _productRepository.GetProductBrandsAsync(cancellationToken);
+        var productBrands = await this._productBrandRepo.AllListAsync();
 
         return Ok(productBrands);
     }
@@ -61,7 +67,7 @@ public class ProductsController : ControllerBase
     [HttpGet("types")]
     public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductTypes(CancellationToken cancellationToken)
     {
-        var productTypes = await _productRepository.GetProductTypesAsync(cancellationToken);
+        var productTypes = await this._productTypeRepo.AllListAsync();
 
         return Ok(productTypes);
     }
