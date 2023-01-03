@@ -1,4 +1,5 @@
 ﻿using Core.Entities;
+using Core.Specifications;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -8,4 +9,6 @@ public interface IGenericRepository<T> where T : BaseEntity
 {
     Task<T> GetByIdAsync(int id);
     Task<IReadOnlyList<T>> AllListAsync();
+    Task<T> GetEntityWithSpec(ISpecification<T> spec);
+    Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec);
 }
