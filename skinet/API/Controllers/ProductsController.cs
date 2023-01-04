@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Core.Interfaces;
 using System.Threading;
 using Core.Specifications;
+using API.Dtos;
+using System.Linq;
 
 namespace API.Controllers;
 
@@ -31,13 +33,22 @@ public class ProductsController : ControllerBase
     /// Get The Product List
     /// </Summary>
     [HttpGet]
-    public async Task<ActionResult<List<Product>>> GetProducts(CancellationToken cancellationToken)
+    public async Task<ActionResult<List<ProductToReturnDto>>> GetProducts(CancellationToken cancellationToken)
     {
         var spec = new ProductsWithTypesAndBrandsSpecification();
 
         var products = await this._productsRepo.ListAsync(spec);
 
-        return Ok(products);
+        return products.Select(product => new ProductToReturnDto
+        {
+            Id = product.Id,
+            Name = product.Name,
+            Description = product.Description,
+            Price = product.Price,
+            PictureUrl= product.PictureUrl,
+            ProductBrand = product.ProductBrand.Name,
+            ProductType = product.ProductType.Name
+        }).ToList();
     }
 
     /// <Summary>
@@ -46,13 +57,22 @@ public class ProductsController : ControllerBase
     /// <param name="id"></param>
     /// <returns> Product with specific id </returns>
     [HttpGet("{id}")]
-    public async  Task<ActionResult<string>> GetProduct(int id, CancellationToken cancellationToken)
+    public async  Task<ActionResult<ProductToReturnDto>> GetProduct(int id, CancellationToken cancellationToken)
     {
         var spec = new ProductsWithTypesAndBrandsSpecification(id);
 
         var product = await this._productsRepo.GetEntityWithSpec(spec);
 
-        return Ok(product);
+        return new ProductToReturnDto
+        {
+            Id = product.Id,
+            Name = product.Name,
+            Description = product.Description,
+            Price = product.Price,
+            PictureUrl = product.PictureUrl,
+            ProductBrand = product.ProductBrand.Name,
+            ProductType = product.ProductType.Name
+        };
     }
 
     /// <Summary>
