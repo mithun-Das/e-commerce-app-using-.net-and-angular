@@ -48,7 +48,9 @@ public class ProductsController : ControllerBase
     [HttpGet("{id}")]
     public async  Task<ActionResult<string>> GetProduct(int id, CancellationToken cancellationToken)
     {
-        var product = await this._productsRepo.GetByIdAsync(id);
+        var spec = new ProductsWithTypesAndBrandsSpecification(id);
+
+        var product = await this._productsRepo.GetEntityWithSpec(spec);
 
         return Ok(product);
     }
