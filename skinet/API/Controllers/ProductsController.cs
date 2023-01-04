@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Core.Interfaces;
 using System.Threading;
+using Core.Specifications;
 
 namespace API.Controllers;
 
@@ -32,7 +33,9 @@ public class ProductsController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<Product>>> GetProducts(CancellationToken cancellationToken)
     {
-        var products = await this._productsRepo.AllListAsync();
+        var spec = new ProductsWithTypesAndBrandsSpecification();
+
+        var products = await this._productsRepo.ListAsync(spec);
 
         return Ok(products);
     }
