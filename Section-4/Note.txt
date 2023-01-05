@@ -16,3 +16,9 @@
 
 -> Set<T>()
    Creates a <see cref="DbSet{TEntity}" /> that can be used to query and save instances of <typeparamref name="TEntity" />.
+
+
+-------------> Section-4: Part-44 -> Adding AutoMapper to the API project <-------------
+
+-> Automapper Injection
+   src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137196#questions/18947440

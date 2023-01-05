@@ -7,6 +7,7 @@ using System.Threading;
 using Core.Specifications;
 using API.Dtos;
 using System.Linq;
+using AutoMapper;
 
 namespace API.Controllers;
 
@@ -17,14 +18,17 @@ public class ProductsController : ControllerBase
     private readonly IGenericRepository<Product> _productsRepo;
     private readonly IGenericRepository<ProductBrand> _productBrandRepo;
     private readonly IGenericRepository<ProductType> _productTypeRepo;
+    private readonly IMapper _mapper;
 
     public ProductsController(IGenericRepository<Product> productsRepo,
         IGenericRepository<ProductBrand> productBrandRepo,
-        IGenericRepository<ProductType> productTypeRepo)
+        IGenericRepository<ProductType> productTypeRepo,
+        IMapper mapper)
     {
         _productsRepo = productsRepo;
         _productBrandRepo = productBrandRepo;
         _productTypeRepo = productTypeRepo;
+        _mapper = mapper;
     }
 
     #region[GET Requests]
@@ -63,16 +67,7 @@ public class ProductsController : ControllerBase
 
         var product = await this._productsRepo.GetEntityWithSpec(spec);
 
-        return new ProductToReturnDto
-        {
-            Id = product.Id,
-            Name = product.Name,
-            Description = product.Description,
-            Price = product.Price,
-            PictureUrl = product.PictureUrl,
-            ProductBrand = product.ProductBrand.Name,
-            ProductType = product.ProductType.Name
-        };
+        return this._mapper.Map<Product, ProductToReturnDto>(product);
     }
 
     /// <Summary>
