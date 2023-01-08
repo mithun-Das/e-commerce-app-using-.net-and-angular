@@ -37,22 +37,13 @@ public class ProductsController : ControllerBase
     /// Get The Product List
     /// </Summary>
     [HttpGet]
-    public async Task<ActionResult<List<ProductToReturnDto>>> GetProducts(CancellationToken cancellationToken)
+    public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts(CancellationToken cancellationToken)
     {
         var spec = new ProductsWithTypesAndBrandsSpecification();
 
         var products = await this._productsRepo.ListAsync(spec);
 
-        return products.Select(product => new ProductToReturnDto
-        {
-            Id = product.Id,
-            Name = product.Name,
-            Description = product.Description,
-            Price = product.Price,
-            PictureUrl= product.PictureUrl,
-            ProductBrand = product.ProductBrand.Name,
-            ProductType = product.ProductType.Name
-        }).ToList();
+        return Ok(this._mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
     }
 
     /// <Summary>
