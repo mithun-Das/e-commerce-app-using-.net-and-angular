@@ -1,2 +1,5 @@
 
 -> See discussion with Amzad bhai about why we need specification pattern
+
+-> Why Expression Tree?
+   src: https://www.tutorialsteacher.com/linq/expression-tree

@@ -23,7 +23,17 @@
 -> Automapper Injection
    src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137196#questions/18947440
 
+-> Future Task
+	
+	-> Why we can't inject IConfiguration in constructor of Mapping Profiles
+	   and also why it requires parameterless constructor
+
 
 -------------> Section-4: Part-47 -> Serving static content from the API <-------------
 
 -> app.UseStaticFiles() => We used this in the middleware before authentication because we haven't implemented any security yet.
+
+-> Future Task
+
+	-> Why we need to explicitly mention app.UseStaticFiles() in the middleware?
+	   Shouldn't static files need to be served by default?
