@@ -41,3 +41,29 @@
 
 -> JsonSerializer.Serialize((ApiException)response);
    We needed to explicitly casting here because without it "Details" property was not getting serialized	
+
+
+-------------> Section-5: Part-54 -> Improving the validation error responses <-------------
+
+-> Without [ApiController] attribute, no details message will appear
+   if it encounters what it sees as a validation error, then it adds the error to something called
+   to model state and then this model state error response to our API server is generating and sending
+   back to us.
+
+
+-> Earlier on, I mentioned that anything inside Configure Service, the ordering is not particularly important.
+   However, there's always an exception, and Configure endpoint is the one because 
+   we want to configure something related to our controllers.
+
+   If we try and do this above AddController, then this doesn't seem to work.
+   And we do have to actually add this particular service or configuration after the controllers in this case.
+
+
+-> Select vs SelectMany
+   src: https://www.youtube.com/watch?v=9tgz3aVNblM
+
+-> Future Task
+
+	-> List Vs IEnumerable
+	-> Learn more about Startup Class
+	   src: https://www.tutorialsteacher.com/core/aspnet-core-startup

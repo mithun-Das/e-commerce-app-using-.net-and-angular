@@ -44,6 +44,6 @@ public class BuggyController : BaseApiController
     [HttpGet("badrequest/{id}")]
     public ActionResult GetNotFoundRequest(int id)
     {
-        return Ok(new ApiResponse(400));
+        return Ok();
     }
 }
