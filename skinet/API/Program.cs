@@ -1,4 +1,5 @@
 using API.Helpers;
+using API.Middleware;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
@@ -26,6 +27,9 @@ builder.Services.AddAutoMapper(typeof(MappingProfiles));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
+app.UseMiddleware<ExceptionMiddleware>();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

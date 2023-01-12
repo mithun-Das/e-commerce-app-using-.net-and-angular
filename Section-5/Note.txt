@@ -18,3 +18,26 @@
 
 	-> Learn more about middleware deeply
 	-> app.UseStatusCodePages VS app.UseStatusCodePagesWithRedirects VS app.UseStatusCodePagesWithReExecute
+
+
+-------------> Section-5: Part-53 -> Creating Exception handler middleware <-------------
+
+-> We needed to put [HttpGet] in ErrorController before the "Error" method.
+   Since it was giving error in swagger.
+
+-> public class ApiException : ApiResponse
+   When we inherit a class , we also needed to match appropriate constructor
+
+   For example, in this case when we just inherit ApiResponse class it was showing error
+   saying that there is no parameterless constructor in ApiResponse class
+
+-> RequestDelegate
+-> IHostEnvironment
+-> HttpContext
+-> "InvokeAsync" in middleware
+-> await _next(context) => It means the request will go to the next stage if no exception occurs
+-> Middleware
+   src: https://www.tutorialsteacher.com/core/aspnet-core-middleware
+
+-> JsonSerializer.Serialize((ApiException)response);
+   We needed to explicitly casting here because without it "Details" property was not getting serialized	
