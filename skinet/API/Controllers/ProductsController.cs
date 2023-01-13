@@ -74,7 +74,7 @@ public class ProductsController : BaseApiController
     /// Get The Product Types
     /// </Summary>
     [HttpGet("types")]
-    public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductTypes(CancellationToken cancellationToken)
+    public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes(CancellationToken cancellationToken)
     {
         var productTypes = await this._productTypeRepo.AllListAsync();
 

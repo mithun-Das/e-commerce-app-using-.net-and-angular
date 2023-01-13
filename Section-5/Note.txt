@@ -67,3 +67,10 @@
 	-> List Vs IEnumerable
 	-> Learn more about Startup Class
 	   src: https://www.tutorialsteacher.com/core/aspnet-core-startup
+
+
+
+-------------> Section-5: Part-55 -> Adding Swagger for documenting our API <-------------
+
+-> Qs regarding Nuget Packages for swagger
+   https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137246#questions/19005442
