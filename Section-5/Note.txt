@@ -18,6 +18,8 @@
 
 	-> Learn more about middleware deeply
 	-> app.UseStatusCodePages VS app.UseStatusCodePagesWithRedirects VS app.UseStatusCodePagesWithReExecute
+	   src: https://www.youtube.com/watch?v=DVo138knAHQ&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=58
+	   src: https://www.youtube.com/watch?v=9CwgiSxrkeQ&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=59
 
 
 -------------> Section-5: Part-53 -> Creating Exception handler middleware <-------------
