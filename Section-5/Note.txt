@@ -74,3 +74,9 @@
 
 -> Qs regarding Nuget Packages for swagger
    https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137246#questions/19005442
+
+
+-------------> Section-5: Part-57 -> Cleaning up the Startup class <-------------
+
+
+-> Extension method must be defined in a non-generic static class
