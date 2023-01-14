@@ -1,0 +1,11 @@
+
+---------------> Section-6: Part-60 -> Adding a sorting specification class <---------------
+
+-> For auto implemented properties compiler will create the backing private, anonymous field
+   that can only be accessed through the property's get and set accessors.
+
+-> Why properties?
+   src: https://www.youtube.com/watch?v=uYXQH2QFmqk&list=PLAC325451207E3105&index=26
+
+-> Properties in C#
+   src: https://www.youtube.com/watch?v=iGR425gMKeA&list=PLAC325451207E3105&index=27

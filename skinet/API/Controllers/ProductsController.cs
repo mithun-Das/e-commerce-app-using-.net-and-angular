@@ -37,9 +37,9 @@ public class ProductsController : BaseApiController
     /// Get The Product List
     /// </Summary>
     [HttpGet]
-    public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts(CancellationToken cancellationToken)
+    public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts(CancellationToken cancellationToken, string sort)
     {
-        var spec = new ProductsWithTypesAndBrandsSpecification();
+        var spec = new ProductsWithTypesAndBrandsSpecification(sort);
 
         var products = await this._productsRepo.ListAsync(spec);
 
