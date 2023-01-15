@@ -16,4 +16,11 @@ public class ProductSpecParams
     public int? BrandId { get; set; }
     public int? TypeId { get; set; }
     public string? Sort { get; set; }
+    private string? _search;
+
+    public string? Search
+    {
+        get => this._search;
+        set => this._search = value?.ToLower();
+    }
 }
