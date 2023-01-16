@@ -1,0 +1,13 @@
+
+---------------> Section-7: Part-71 -> Setting up the developer environment for Angular <---------------
+
+-> Our currently Installed Version
+
+	=> Angular CLI: 12.2.16
+	=> Node: 16.13.0
+
+
+-> We are updating the version
+
+	=> Angular CLI: 14.0.0
+	=> Node: 18.13.0
