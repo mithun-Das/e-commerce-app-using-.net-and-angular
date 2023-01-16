@@ -9,3 +9,11 @@
 
 -> Properties in C#
    src: https://www.youtube.com/watch?v=iGR425gMKeA&list=PLAC325451207E3105&index=27
+
+
+---------------> Section-6: Part-68 -> Adding CORS Support to the API <---------------
+
+
+-> CORS
+   src: https://www.youtube.com/watch?v=WKZLVqwpoiE&list=PL6n9fhu94yhW7yoUOGNOfHurUE6bpOO2b&index=14
+   src: https://www.youtube.com/watch?v=nsnuIZX1C9A&list=PL6n9fhu94yhW7yoUOGNOfHurUE6bpOO2b&index=15
