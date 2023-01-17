@@ -11,3 +11,8 @@
    src: https://angular.io/guide/lifecycle-hooks
 
 -> Class property sits first at the class
+
+
+---------------> Section-8: Part-84 -> Typescript Demo <---------------
+
+-> Same as DatingApp
