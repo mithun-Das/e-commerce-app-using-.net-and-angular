@@ -11,3 +11,9 @@
 
 	=> Angular CLI: 14.0.0
 	=> Node: 18.13.0
+
+
+
+---------------> Section-7: Part-73 -> Reviewing the Angular project files in the template <---------------
+
+-> Angular is a single page application framework and single page implies we have a single indexed HTML.
