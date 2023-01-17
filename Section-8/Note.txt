@@ -2,3 +2,12 @@
 ---------------> Section-8: Part-78 -> Adding a Nav Bar component <---------------
 
 -> We can change the app prefix(app-nav-bar) via changing in angular.json
+
+
+---------------> Section-8: Part-81 -> Intro to the Http Client Module <---------------
+
+-> lifecycle hook
+   src: https://angular.io/guide/glossary#lifecycle-hook
+   src: https://angular.io/guide/lifecycle-hooks
+
+-> Class property sits first at the class
