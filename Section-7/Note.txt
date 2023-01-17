@@ -18,10 +18,12 @@
 
 -> Angular is a single page application framework and single page implies we have a single indexed HTML.
 
+-> What is SPA
+   src: https://www.youtube.com/watch?v=xfGciVdbktI
 
 ---------------> Section-7: Part-74 -> Setting up Angular to use HTTPS <---------------
 
--> Follow the instruction from "StudentAssets\generateTrustedSSL\" folder ro install certificate.
+-> Follow the instruction from "StudentAssets\generateTrustedSSL\" folder to install certificate.
 
 -> Regarding https related issue
    src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137344#questions/16064450
