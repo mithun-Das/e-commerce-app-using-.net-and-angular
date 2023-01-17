@@ -1,0 +1,4 @@
+
+---------------> Section-8: Part-78 -> Adding a Nav Bar component <---------------
+
+-> We can change the app prefix(app-nav-bar) via changing in angular.json
