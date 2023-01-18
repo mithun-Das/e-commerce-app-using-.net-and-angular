@@ -1,0 +1,5 @@
+
+---------------> Section-9: Part-89 -> Intro to Angular services <---------------
+
+
+-> If we declare provided in root for service then we do not need to inject that service in ProvidedIn property in AppModule.
