@@ -3,3 +3,13 @@
 
 
 -> If we declare provided in root for service then we do not need to inject that service in ProvidedIn property in AppModule.
+
+
+
+---------------> Section-9: Part-95 -> Adding the filter functionality <---------------
+
+-> { observe: 'response', params } 
+   What we're doing is we're observing a response and this is going to give us the HTTP response instead
+   of the body of the response, which is what it does automatically if we use this way(this.http.get<IBrand[]>(this.baseUrl + 'products/brands')) 
+   of getting the data because we're saying we're observing the response here, we actually need to project this data into our actual response. 
+   We need to extract the body out of this.
