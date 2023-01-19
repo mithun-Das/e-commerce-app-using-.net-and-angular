@@ -13,3 +13,9 @@
    of the body of the response, which is what it does automatically if we use this way(this.http.get<IBrand[]>(this.baseUrl + 'products/brands')) 
    of getting the data because we're saying we're observing the response here, we actually need to project this data into our actual response. 
    We need to extract the body out of this.
+
+
+---------------> Section-9: Part-97 -> Adding the sort functionality <---------------
+
+-> TypeScript Optional Parameters
+   src: https://www.typescripttutorial.net/typescript-tutorial/typescript-optional-parameters/
