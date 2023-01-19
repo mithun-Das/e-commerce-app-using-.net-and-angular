@@ -19,3 +19,10 @@
 
 -> TypeScript Optional Parameters
    src: https://www.typescripttutorial.net/typescript-tutorial/typescript-optional-parameters/
+
+
+---------------> Section-9: Part-98 -> Adding the pagination functionality <---------------
+
+-> Future Task
+
+	-> ForRoot in NgModule
