@@ -1,0 +1,6 @@
+
+---------------> Section-11: Part-122 -> Improving the internal server error component <---------------
+
+-> navigation extras are only available in the constructor, if we try and do this inside the
+   ngOnInit, then we're going to get an undefined for navigation extras.
+   So we have to do it inside constructor.
