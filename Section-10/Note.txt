@@ -1,0 +1,5 @@
+
+
+---------------> Section-10: Part-112 -> Getting an individual product <---------------
+
+-> Instead of using Number() function we can use unary plus operator to convert string to number.
