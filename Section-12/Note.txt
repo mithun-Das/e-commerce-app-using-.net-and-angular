@@ -1,0 +1,37 @@
+
+---------------> Section-12: Part-128 -> Setting the section header title from the breadcrumb service <---------------
+
+
+-> There is a general rule of thumb that if you subscribe to something, then you should always unsubscribe from it.
+   In terms of HTTP requests in Angular, an HTTP request is considered finite. It has a start and an end.
+   When the Http request response has been completed,
+   Then Angular itself's calls the complete undersubscribed. So we don't need to do it.
+   And there is a third part to a subscription. And after the error,
+   we can do something inside here on what we want to do when the request has completed.
+   Now, Angular also has a cycle method called on destroy, and what we could do is implement the on destroying
+   interface and this is the life cycle work that is called when a directive, pipe or service is destroyed.
+   And we can use this for any custom cleanup.
+   But we haven't used that in any of our components.
+   And that's because angular in terms of a component is going to destroy it when the component is no longer in use.
+   And in terms of Http requests, angular is going to complete those requests. 
+   And free up the resources when they're no longer in use.
+
+   Now, sometimes some developers may say, well, how about if you get into a situation where the Http
+   request doesn't complete because your server is so busy, then what are you going to do then?
+   Because then the complete method is not going to be called.
+
+   And that is a valid point and it's possibly something you would want to consider.
+   But we're not going to consider that on this course. We're going to assume that our EDP requests are 
+   either going to complete successfully or they're going to error.
+
+
+-> breadcrumb$
+   This is coming from a service that we have created and we don't know what its clean up is when our component is disposed.
+   Is it going to destroy the resources or is it not? Do we need to manually and unsubscribe from this?
+   And there's ways around this.
+
+-> The async pipe in Angular is going to subscribe automatically to this particular observable.
+   And crucially, when our component is destroyed, it's automatically going to unsubscribe from this observable as well.
+
+-> Why we should unsubscribe
+   src: https://stackoverflow.com/questions/38008334/angular-rxjs-when-should-i-unsubscribe-from-subscription
