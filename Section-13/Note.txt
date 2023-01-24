@@ -16,3 +16,11 @@
 
 -> Why just not return basket which we got for update ?
    src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137686#questions/19081110
+
+
+
+---------------> Section-13: Part-141 -> Installing Redis with Docker <---------------
+
+-> Future Task
+
+	-> Install Redis on a linux server
