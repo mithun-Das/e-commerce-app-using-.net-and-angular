@@ -3,3 +3,9 @@
 
 -> builder.Services.AddSingleton<ConnectionMultiplexer>
    Now it is threadsafe
+
+
+---------------> Section-13: Part-137 -> Setting up the basket class <---------------
+
+-> Why not using BaseEntity class in BasketItem?
+   src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137680#questions/19080372
