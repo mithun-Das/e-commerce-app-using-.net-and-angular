@@ -9,3 +9,10 @@
 
 -> Why not using BaseEntity class in BasketItem?
    src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137680#questions/19080372
+
+
+---------------> Section-13: Part-139 -> Implementing the basket repository <---------------
+
+
+-> Why just not return basket which we got for update ?
+   src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137686#questions/19081110
