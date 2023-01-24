@@ -35,3 +35,10 @@
 
 -> Why we should unsubscribe
    src: https://stackoverflow.com/questions/38008334/angular-rxjs-when-should-i-unsubscribe-from-subscription
+
+
+
+---------------> Section-12: Part-132 -> Cleaning up loading issues <---------------
+
+-> @ViewChild('search', {static: false}) searchTerm: ElementRef
+   If we use { static: true } then no ngIf condition are applicable
