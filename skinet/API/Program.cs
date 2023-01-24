@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using StackExchange.Redis;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,7 +29,13 @@ builder.Services.AddCors(opt =>
         policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
     });
 });
+builder.Services.AddSingleton<ConnectionMultiplexer>(c =>
+{
+    var configuration = ConfigurationOptions
+                        .Parse(builder.Configuration.GetConnectionString("Redis"), true);
 
+    return ConnectionMultiplexer.Connect(configuration);
+});
 
 var app = builder.Build();
 

@@ -1,0 +1,5 @@
+
+---------------> Section-13: Part-136 -> Setting up Redis <---------------
+
+-> builder.Services.AddSingleton<ConnectionMultiplexer>
+   Now it is threadsafe
