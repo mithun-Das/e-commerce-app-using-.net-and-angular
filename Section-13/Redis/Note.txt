@@ -1,0 +1,3 @@
+
+-> Persist data by using snapshot every minute which get saved in the disk.
+   So data can be recovered when server or redis itself get restarted.
