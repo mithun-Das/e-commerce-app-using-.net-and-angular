@@ -24,3 +24,11 @@
 -> Future Task
 
 	-> Install Redis on a linux server
+
+
+---------------> Section-13: Part-144 -> Testing the basket functionality <---------------
+
+-> Future Task
+
+	-> How to bypass a request when redis server is dead. 
+	   Otherwise it causes runtime error when no connection is found for redis
