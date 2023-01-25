@@ -1,0 +1,5 @@
+
+---------------> Section-14: Part-149 -> Basket service methods <---------------
+
+-> Why we don`t subscribe directly to the BehaviorSubject?
+   src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137742#questions/12846781
