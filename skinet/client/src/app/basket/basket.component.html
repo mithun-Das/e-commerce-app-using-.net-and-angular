@@ -64,6 +64,7 @@
                         <i
                           class="fa fa-minus-circle text-warning mr-12"
                           style="cursor: pointer; font-size: 2em"
+                          (click)="decrementItemQuantity(item)"
                         ></i>
                         <span
                           class="font-weight-bold ml-2"
@@ -73,6 +74,7 @@
                         <i
                           class="fa fa-plus-circle text-warning mx-2"
                           style="cursor: pointer; font-size: 2em"
+                          (click)="incrementItemQuantity(item)"
                         ></i>
                       </div>
                     </td>
@@ -83,7 +85,11 @@
                     </td>
                     <td class="align-middle text-center">
                       <a class="text-gender">
-                        <i class="fa fa-trash" style="font-weight: 2em"></i>
+                        <i
+                          class="fa fa-trash"
+                          style="font-weight: 2em; cursor: pointer;"
+                          (click)="removeBasketItem(item)"
+                        ></i>
                       </a>
                     </td>
                   </tr>

@@ -54,7 +54,7 @@ export class BasketService {
     this.setBasket(basket);
   }
 
-  incrementItemQuantity(item: IProduct) {
+  incrementItemQuantity(item: IBasketItem) {
     const basket = this.getCurrentBasketValue();
     const itemToIncrement = basket.items.findIndex(
       (data) => data.id === item.id
@@ -63,7 +63,7 @@ export class BasketService {
     this.setBasket(basket);
   }
 
-  decrementItemQuantity(item: IProduct) {
+  decrementItemQuantity(item: IBasketItem) {
     const basket = this.getCurrentBasketValue();
     const itemToDecrement = basket.items.findIndex(
       (data) => data.id === item.id
@@ -72,11 +72,11 @@ export class BasketService {
       basket.items[itemToDecrement].quantity -= 1;
       this.setBasket(basket);
     } else {
-      this.removeItem(item);
+      this.removeItemFromBasket(item);
     }
   }
 
-  removeItem(item: IProduct) {
+  removeItemFromBasket(item: IBasketItem) {
     const basket = this.getCurrentBasketValue();
     if (basket.items.some((x) => x.id === item.id)) {
       basket.items = basket.items.filter((i) => i.id != item.id);
