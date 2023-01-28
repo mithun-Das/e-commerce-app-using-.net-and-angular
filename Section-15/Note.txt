@@ -15,3 +15,12 @@
 
 -> AppIdentityDbContext : IdentityDbContext<AppUser>
    Without specifying the class the properties of "AppUser" will not going to be added in table/migration
+
+
+---------------> Section-15: Part-170 -> Adding an Account controller <---------------
+
+-> _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
+   We are not dealing with lockout option in this course
+
+-> Why not using userManager for password check?
+   src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137856#questions/19109350
