@@ -9,3 +9,9 @@
 
 	-> Do we actually need to override OnModelCreating ?
 	   (For both EntityFramework and IdentityEntityFramework)
+
+
+---------------> Section-15: Part-166 -> Adding a new migration <---------------
+
+-> AppIdentityDbContext : IdentityDbContext<AppUser>
+   Without specifying the class the properties of "AppUser" will not going to be added in table/migration
