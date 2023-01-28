@@ -2,6 +2,7 @@ using API.Extensions;
 using API.Helpers;
 using API.Middleware;
 using Infrastructure.Data;
+using Infrastructure.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +22,8 @@ builder.Services.AddApplicationService();
 builder.Services.AddSwaggerDocumentation();
 builder.Services.AddDbContext<StoreContext>
     (x => x.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppIdentityDbContext>
+    (x => x.UseSqlite(builder.Configuration.GetConnectionString("IdentityConnection")));
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 builder.Services.AddCors(opt =>
 {

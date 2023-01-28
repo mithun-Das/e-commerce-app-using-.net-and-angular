@@ -1,0 +1,11 @@
+
+
+---------------> Section-15: Part-165 -> Adding the IdentityDbContext <---------------
+
+-> Why different database?
+   src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137840#questions/19106640
+
+-> Future Task
+
+	-> Do we actually need to override OnModelCreating ?
+	   (For both EntityFramework and IdentityEntityFramework)
