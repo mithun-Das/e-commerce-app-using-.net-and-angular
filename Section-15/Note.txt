@@ -24,3 +24,13 @@
 
 -> Why not using userManager for password check?
    src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18137856#questions/19109350
+
+
+---------------> Section-15: Part-175 -> Troubleshooting auth issues <---------------
+
+-> One of my job as a software engineer is to gather information
+
+-> Future Task
+
+	-> Learn more about logging level
+	   src: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-7.0
