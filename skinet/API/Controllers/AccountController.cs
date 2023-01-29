@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using API.Errors;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using System.Security.Claims;
+using API.Extensions;
 
 namespace API.Controllers;
 
@@ -29,9 +29,7 @@ public class AccountController : BaseApiController
     [HttpGet]
     public async Task<ActionResult<UserDto>> GetCurrentUser()
     {
-        var email = User.FindFirstValue(ClaimTypes.Email);
-
-        var user = await this._userManager.FindByEmailAsync(email);
+        var user = await this._userManager.FindByEmailFromClaimsPrinciple(User);
 
         return new UserDto
         {
@@ -51,13 +49,11 @@ public class AccountController : BaseApiController
 
     [Authorize]
     [HttpGet("address")]
-    public async Task<ActionResult<string>> GetAddress()
+    public async Task<ActionResult<Address>> GetAddress()
     {
-        var email = User.FindFirstValue(ClaimTypes.Email);
+        var user = await this._userManager.FindByUserByClaimsPrincipleWithAddressAsync(User);
 
-        var user = await this._userManager.FindByEmailAsync(email);
-
-        return Ok(user.Address);
+        return user.Address;
     }
 
     [HttpPost("login")]
