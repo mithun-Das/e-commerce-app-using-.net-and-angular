@@ -11,6 +11,7 @@ using AutoMapper;
 using API.Errors;
 using Microsoft.AspNetCore.Http;
 using API.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers;
 
@@ -38,6 +39,7 @@ public class ProductsController : BaseApiController
     /// Get The Product List
     /// </Summary>
     [HttpGet]
+    [Authorize]
     public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(CancellationToken cancellationToken, 
         [FromQuery]ProductSpecParams productParams)
     {

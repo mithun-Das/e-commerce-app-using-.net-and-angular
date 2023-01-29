@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using API.Errors;
+using Core.Interfaces;
 
 namespace API.Controllers;
 
@@ -11,12 +12,15 @@ public class AccountController : BaseApiController
 {
     private readonly UserManager<AppUser> _userManager;
     private readonly SignInManager<AppUser> _signInManager;
+    private readonly ITokenService _tokenService;
 
 
-    public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+    public AccountController(UserManager<AppUser> userManager, 
+        SignInManager<AppUser> signInManager, ITokenService tokenService)
     {
         _userManager = userManager;
         _signInManager = signInManager;
+        _tokenService = tokenService;
     }
 
     [HttpPost("login")]
@@ -28,13 +32,13 @@ public class AccountController : BaseApiController
 
         var result = await this._signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
 
-        if(!result.Succeeded) { return Unauthorized(new ApiResponse(401)); }
+        if (!result.Succeeded) { return Unauthorized(new ApiResponse(401)); }
 
         return new UserDto
         {
             Email = user.Email,
             DisplayName = user.DisplayName,
-            Token = "This is Token"
+            Token = _tokenService.CreateToken(user)
         };
     }
 
@@ -56,7 +60,7 @@ public class AccountController : BaseApiController
         {
             Email = user.Email,
             DisplayName = user.DisplayName,
-            Token = "This will be a token"
+            Token = _tokenService.CreateToken(user)
         };
     }
 }
