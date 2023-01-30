@@ -24,3 +24,9 @@
 -> In Automapper, we also need to create mapping profile for a class if a class used as type of that class
    for which we already created map.
    In this case we needed to create map for BasketItemDto along with CustomerBasketDto
+
+
+--------------> Section-16: Part-185 -> Updating swagger config for identity <---------------
+
+-> If we provide authorization token in swagger, then why we cannot make request with token from postman
+   What is it's internal behaviour of swagger configuration for identity  
