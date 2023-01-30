@@ -17,3 +17,10 @@
 
 -> Regex expression tool:
    src: https://regexlib.com/Search.aspx?k=password
+
+
+--------------> Section-16: Part-184 -> Validating the basket <---------------
+
+-> In Automapper, we also need to create mapping profile for a class if a class used as type of that class
+   for which we already created map.
+   In this case we needed to create map for BasketItemDto along with CustomerBasketDto

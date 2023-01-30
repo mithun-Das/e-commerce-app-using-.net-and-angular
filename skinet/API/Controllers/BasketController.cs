@@ -1,4 +1,6 @@
-﻿using Core.Entities;
+﻿using API.Dtos;
+using AutoMapper;
+using Core.Entities;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -8,10 +10,12 @@ namespace API.Controllers;
 public class BasketController : BaseApiController
 {
     private readonly IBasketRepository _basketRepository;
+    private readonly IMapper _mapper;
 
-    public BasketController(IBasketRepository basketRepository)
+    public BasketController(IBasketRepository basketRepository, IMapper mapper)
     {
         this._basketRepository = basketRepository;
+        this._mapper = mapper;
     }
 
     [HttpGet]
@@ -23,9 +27,11 @@ public class BasketController : BaseApiController
     }
 
     [HttpPost]
-    public async Task<ActionResult<CustomerBasket>> UpdateBasket(CustomerBasket customerBasket)
+    public async Task<ActionResult<CustomerBasket>> UpdateBasket(CustomerBasketDto customerBasketDto)
     {
-        var updateBasket = await this._basketRepository.UpdateBasketAsync(customerBasket);
+        var basket = this._mapper.Map<CustomerBasket>(customerBasketDto);
+
+        var updateBasket = await this._basketRepository.UpdateBasketAsync(basket);
 
         return Ok(updateBasket);
     }
