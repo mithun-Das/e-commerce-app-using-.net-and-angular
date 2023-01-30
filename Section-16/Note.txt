@@ -8,4 +8,12 @@
    We can apply data annotation in property
 
 -> Since we configured Nullable enable, so we do not require to put data annotation [Required] in AddressDto Model.
+   But problem is empty string and null are not same thing. So we do not receive any error when we send empty string 
+   for a string field. To prevent this we need required data annotation in string field. 
    Here we want to implement validation where user passes data rather than entity.
+
+
+--------------> Section-16: Part-183 -> Checking for duplicate email addresses <---------------
+
+-> Regex expression tool:
+   src: https://regexlib.com/Search.aspx?k=password
