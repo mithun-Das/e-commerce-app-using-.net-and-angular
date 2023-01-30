@@ -1,0 +1,11 @@
+
+
+---------------> Section-16: Part-182 -> Model validation <---------------
+
+
+-> It is recommended approach to implement validation in database level like ProductConfiguration.cs
+   But we can also implement it in high level. We can implement in the entity level.
+   We can apply data annotation in property
+
+-> Since we configured Nullable enable, so we do not require to put data annotation [Required] in AddressDto Model.
+   Here we want to implement validation where user passes data rather than entity.
