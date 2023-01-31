@@ -2,3 +2,8 @@
 --------------> Section-17: Part-190 -> Angular forms introduction <---------------
 
 -> Rewatch this section to gain information about template driven vs Reactive Form
+
+
+--------------> Section-17: Part-191 -> Using reactive forms in Angular <---------------
+
+-> Why we are importing ReactiveFormsModule in SharedModule ???
