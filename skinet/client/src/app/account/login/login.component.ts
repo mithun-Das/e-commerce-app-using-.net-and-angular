@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AccountService } from '../account.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AccountService } from '../account.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private accountService: AccountService) {}
+  constructor(private accountService: AccountService, private router: Router) {}
 
   loginForm = new FormGroup({
     email: new FormControl('', Validators.required),
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     this.accountService.login(this.loginForm.value).subscribe({
-      next: user => console.log(user)
+      next: () => this.router.navigateByUrl("/shop")
     });
   }
 }
