@@ -7,3 +7,14 @@
 --------------> Section-17: Part-191 -> Using reactive forms in Angular <---------------
 
 -> Why we are importing ReactiveFormsModule in SharedModule ???
+
+
+--------------> Section-17: Part-198 -> Creating a reusable text input <---------------
+
+-> @Self
+-> NgControl
+-> get control(): FormControl {
+    return this.controlDir.control as FormControl;
+  }
+
+-> this.controlDir.valueAccessor = this;
