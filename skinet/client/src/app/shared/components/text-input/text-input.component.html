@@ -5,7 +5,7 @@
     placeholder="{{ label }}"
     class="form-control"
     [ngClass]="
-      (control.touched) ? control.invalid ? 'is-invalid' : 'is-valid' : null
+      control.touched ? (control.invalid ? 'is-invalid' : 'is-valid') : null
     "
   />
   <label for="floatingInput">{{ label }}</label>
@@ -14,5 +14,9 @@
   </div>
   <div *ngIf="control.errors?.['email']" class="invalid-feedback">
     Invalid Email Address
+  </div>
+  <div *ngIf="control.errors?.['pattern']" class="invalid-feedback">
+    It expects atleast 1 small-case letter, 1 Capital letter, 1 digit, 1 special
+    character and the length should be between 6-10 characters
   </div>
 </div>
