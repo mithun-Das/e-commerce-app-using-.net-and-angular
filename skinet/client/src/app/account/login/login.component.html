@@ -6,13 +6,28 @@
       </div>
       <div class="form-floating mb-3">
         <input
+          [class.is-invalid]="
+            loginForm.get('email')?.touched && loginForm.get('email')?.invalid
+          "
           formControlName="email"
           type="email"
-          class="form-control is-invalid"
+          class="form-control"
           id="floatingInput"
           placeholder="Email"
         />
         <label for="floatingInput">Email address</label>
+        <div
+          *ngIf="loginForm.get('email')?.errors?.['required']"
+          class="invalid-feedback"
+        >
+          Please choose a email
+        </div>
+        <div
+          *ngIf="loginForm.get('email')?.errors?.['email']"
+          class="invalid-feedback"
+        >
+          Invalid Email Address
+        </div>
       </div>
       <div class="form-floating">
         <input
