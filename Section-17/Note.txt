@@ -18,3 +18,9 @@
   }
 
 -> this.controlDir.valueAccessor = this;
+
+
+--------------> Section-17: Part-204 -> Creating an auth guard <---------------
+
+-> Don't rely on client side security
+   Real security comes from API/Backend
