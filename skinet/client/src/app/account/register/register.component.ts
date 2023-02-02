@@ -15,6 +15,8 @@ export class RegisterComponent {
     private router: Router
   ) {}
 
+  errors : string[] | null = null;
+
   complexPasswordPattern =
     "(?=^.{6,10}$)(?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*s).*$";
 
@@ -30,6 +32,7 @@ export class RegisterComponent {
   onSubmit() {
     this.accountService.register(this.registerForm.value).subscribe({
       next: () => this.router.navigateByUrl('/shop'),
+      error: (error) => this.errors = error.errors
     });
   }
 }
