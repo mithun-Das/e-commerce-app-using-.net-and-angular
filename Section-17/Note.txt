@@ -24,3 +24,10 @@
 
 -> Don't rely on client side security
    Real security comes from API/Backend
+
+
+--------------> Section-17: Part-205 -> Using the replay subject <---------------
+
+-> Future Task
+
+	-> BehaviourSubject vs ReplaySubject
