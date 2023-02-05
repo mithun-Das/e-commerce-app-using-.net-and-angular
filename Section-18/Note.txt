@@ -3,6 +3,7 @@
 --------------> Section-18: Part-208 -> Creating the order aggregate part 1 <---------------
 
 -> Owned Entity
+   We do not need to keep Id property in owned entity
 
 -> Previously created Address entity is tightly bound to our identity.
    And remember, this one is in a separate context boundary 
