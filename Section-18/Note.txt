@@ -17,3 +17,10 @@
    but we wouldn't want to change it as well inside our order.
    So we don't want to relation between our order and our product item.
    We're going to store the values as it was when it was ordered into our database.
+
+
+--------------> Section-18: Part-210 -> Configuring the order entities <---------------
+
+-> Future Task
+
+	=> Learn more about OrderConfiguration and it's workflow
