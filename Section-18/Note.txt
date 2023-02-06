@@ -34,3 +34,16 @@
 	=> Understand Activator class
 	=> TypeOf
 	=> Analyze the Unit Of Work Pattern after learning necessary topics
+
+
+--------------> Section-18: Part-219 -> Updating the generic repository <---------------
+
+-> None of these asynchronous methods and the reason for this is that we're not going to be directly
+   adding these to the database when we use any of these methods are always saying to entityframework when
+   we use these is we want to add this. So track it or we want to update this, So track it.
+   And this is happening in memory. It's not happening SQLite or whatever database technology we're using.
+   Our repository is not responsible for saving changes to the database. That is left to our units of work.
+
+
+-> Why Attach
+   https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18138234#questions/13999912
