@@ -24,3 +24,13 @@
 -> Future Task
 
 	=> Learn more about OrderConfiguration and it's workflow
+
+
+--------------> Section-18: Part-218 -> Implementing the Unit of work <---------------
+
+-> Future Task***(very urgent)
+
+	=> Understand Reflection
+	=> Understand Activator class
+	=> TypeOf
+	=> Analyze the Unit Of Work Pattern after learning necessary topics
