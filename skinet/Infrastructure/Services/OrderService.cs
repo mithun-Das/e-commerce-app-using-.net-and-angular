@@ -3,7 +3,6 @@
 using Core.Entities;
 using Core.Entities.OrderAggregate;
 using Core.Interfaces;
-using Infrastructure.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,7 +17,7 @@ namespace Infrastructure.Services
         private readonly IBasketRepository _basketRepo;
 
         public OrderService(IGenericRepository<Order> orderRepo, IGenericRepository<Product> productRepo, 
-            IGenericRepository<DeliveryMethod> dmRepo, BasketRepository basketRepo)
+            IGenericRepository<DeliveryMethod> dmRepo, IBasketRepository basketRepo)
         {
             _orderRepo = orderRepo;
             _productRepo = productRepo;

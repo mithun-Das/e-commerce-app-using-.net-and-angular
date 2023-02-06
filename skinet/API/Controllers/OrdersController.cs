@@ -5,7 +5,6 @@ using API.Extensions;
 using AutoMapper;
 using Core.Entities.OrderAggregate;
 using Core.Interfaces;
-using Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -18,7 +17,7 @@ public class OrdersController : BaseApiController
     private readonly IOrderService _orderService;
     private readonly IMapper _mapper;
 
-    public OrdersController(OrderService orderService, IMapper mapper)
+    public OrdersController(IOrderService orderService, IMapper mapper)
     {
         this._orderService = orderService;
         this._mapper = mapper;
