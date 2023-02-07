@@ -25,7 +25,7 @@ public class Order : BaseEntity
     public IReadOnlyList<OrderItem> OrderItems { get; set; }
     public decimal SubTotal { get; set; }
     public OrderStatus Status { get; set; }
-    public string PaymentIntentId { get; set; }
+    public string PaymentIntentId { get; set; } = string.Empty;
     public decimal GetTotal()
     {
         return SubTotal + DeliveryMethod.Price;
