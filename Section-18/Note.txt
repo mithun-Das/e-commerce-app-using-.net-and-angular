@@ -22,7 +22,10 @@
 --------------> Section-18: Part-210 -> Configuring the order entities <---------------
 
 -> Future Task
-
+	
+	=> Learn more about Owned Entity
+	   src: https://learn.microsoft.com/en-us/ef/core/modeling/owned-entities
+	
 	=> Learn more about OrderConfiguration and it's workflow
 
 
