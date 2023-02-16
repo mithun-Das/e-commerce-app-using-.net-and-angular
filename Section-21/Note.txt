@@ -1,0 +1,18 @@
+
+
+--------------> Section-21: Part-254 -> Setting up stripe <---------------
+
+-> If Stripe account can't be open from Bangladesh then how it can be used from Bangladesh?
+   (ask Sabbir bhai)
+
+-> The cost for this is per transaction, 2.9% plus a 30% charge.
+   Now, if that sounds excessive to you, then they're handling or taking all the risk.
+   They've got all the infrastructure and they're still taking Card payments.
+
+   Now, if you were to take Stripe out of the equation and you were just taking a Visa or MasterCard payment
+   directly, you're still going to be paying Visa or MasterCard something like 2% anyway per transaction.
+   And the only free way of taking money is to simply take cash.
+
+   what we're going to take a look at is very standard shopping cart where we expect people to pay
+   for their goods via credit card or bank debit card, and Stripe is going to allow us to do that.
+   (Don't got this point) 
