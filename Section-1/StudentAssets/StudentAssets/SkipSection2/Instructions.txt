@@ -2,10 +2,32 @@ Install Required Software:
 
 Postman
 Git
-.Net SDK (v3.1.101 was used for the demos)
+.Net SDK (.Net v7 is used for the demos).
+Code editor or IDE (VS Code is used for all the demos)
 
-Commands to create the projects:
-================================
+Fast way - cloning the project
+==============================
+
+git clone https://github.com/TryCatchLearn/Skinet.git
+cd Skinet
+git reset --hard 80814b868221d2511a7a904bec8e5e536cc47b55
+
+// Make sure project can build without errors
+
+dotnet restore
+dotnet build
+
+// Create a new GitHub repository for this project and update the remote origin.
+
+git remote set-url origin https://github.com/YOURGITHUBUSERBAME/name-of-repository.git
+
+// Push the changes to your own GitHub repository
+
+git push origin main
+
+
+Slow way - manual approach to create the projects and get to the same point as end of section 2:
+===============================================================================================
 
 mkdir skinet
 cd skinet
@@ -44,12 +66,11 @@ Install Entity Framework Packages:
 
 In the API project add a nuget package for:
 
-Microsoft.EntityFrameworkCore.Design Version="3.1.1"
+Microsoft.EntityFrameworkCore.Design
 
 In the Infrastructure project add nuget packages for:
 
-Microsoft.EntityFrameworkCore Version="3.1.1"
-Microsoft.EntityFrameworkCore.Sqlite Version="3.1.1"
+Microsoft.EntityFrameworkCore.Sqlite
 
 run the following command:
 
@@ -89,7 +110,7 @@ Add a connection string in appsettings.development.json:
   }
 }
 
-Add the DbContext to the Startup class (startup class should look as follows):
+Add the DbContext to the Program class (program class should look as follows):
 
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
@@ -147,7 +168,7 @@ Adding migration and updating database:
 
 Make sure you have the dotnet ef tools installed with the version of the sdk you are using:
 
-dotnet tool install --global dotnet-ef --version 3.1.101
+dotnet tool install --global dotnet-ef
 
 Run the following commmand:
 

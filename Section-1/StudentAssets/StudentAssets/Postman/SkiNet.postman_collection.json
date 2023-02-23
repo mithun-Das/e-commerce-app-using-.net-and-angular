@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "6bbc916f-8723-484a-a638-2122e81c58fb",
+		"_postman_id": "42e1319f-dc5b-426f-b2fa-ba60eb7e6290",
 		"name": "SkiNet",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2726016"
 	},
 	"item": [
 		{
@@ -68,8 +69,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Section 3 - Architecture",
@@ -136,21 +136,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products/brands",
+							"raw": "{{url}}/api/products/types",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"products",
-								"brands"
+								"types"
 							]
 						}
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Section 4 - Genrics",
@@ -230,8 +229,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Section 5 - Error Handling",
@@ -294,19 +292,39 @@
 					"response": []
 				},
 				{
-					"name": "Get Divide By Zero Error",
+					"name": "Get 400 Error",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/buggy/maths",
+							"raw": "{{url}}/api/buggy/badrequest",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"buggy",
-								"maths"
+								"badrequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get 400 Validation error",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/buggy/badrequest/five",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"buggy",
+								"badrequest",
+								"five"
 							]
 						}
 					},
@@ -330,8 +348,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Section 6 - Paging, Sorting and Filtering",
@@ -484,7 +501,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products?pageSize=10&pageIndex=1",
+							"raw": "{{url}}/api/products?pageSize=3&pageIndex=1",
 							"host": [
 								"{{url}}"
 							],
@@ -495,7 +512,7 @@
 							"query": [
 								{
 									"key": "pageSize",
-									"value": "10"
+									"value": "3"
 								},
 								{
 									"key": "pageIndex",
@@ -545,6 +562,40 @@
 					"response": []
 				},
 				{
+					"name": "Get Paged Products by Name (blue)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"type": "text",
+								"value": "https://localhost:4200"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/products?search=blue&sort=priceDesc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "blue"
+								},
+								{
+									"key": "sort",
+									"value": "priceDesc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Check Cors is enabled",
 					"request": {
 						"method": "GET",
@@ -582,8 +633,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Section 13 - Basket",
@@ -670,8 +720,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Section 15 - Identity",
@@ -682,7 +731,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d72eaacb-4b25-4c3d-b265-4f3eae3d6bc4",
 								"exec": [
 									"const user = pm.response.json();",
 									"",
@@ -775,7 +823,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d72eaacb-4b25-4c3d-b265-4f3eae3d6bc4",
 								"exec": [
 									"const user = pm.response.json();",
 									"",
@@ -833,7 +880,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d72eaacb-4b25-4c3d-b265-4f3eae3d6bc4",
 								"exec": [
 									"const user = pm.response.json();",
 									"",
@@ -1109,7 +1155,7 @@
 				{
 					"name": "Update User Address (bob)",
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -1149,7 +1195,7 @@
 				{
 					"name": "Add User Address (tom)",
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -1186,8 +1232,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Section 16 - Validation",
@@ -1238,7 +1283,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d72eaacb-4b25-4c3d-b265-4f3eae3d6bc4",
 								"exec": [
 									"const user = pm.response.json();",
 									"",
@@ -1296,7 +1340,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d72eaacb-4b25-4c3d-b265-4f3eae3d6bc4",
 								"exec": [
 									"const user = pm.response.json();",
 									"",
@@ -1354,7 +1397,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d72eaacb-4b25-4c3d-b265-4f3eae3d6bc4",
 								"exec": [
 									"const user = pm.response.json();",
 									"",
@@ -1440,8 +1482,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Section 18 - Ordering",
@@ -1460,7 +1501,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": \"order1\",\n    \"items\": [\n        {\n            \"id\": 4,\n            \"productName\": \".NET Black & White Mug\",\n            \"price\": 1,\n            \"quantity\": 2,\n            \"pictureUrl\": \"https://localhost:5001/images/products/2.png\",\n            \"brand\": \".NET\",\n            \"type\": \"USB Memory Stick\"\n        }\n    ]\n}",
+							"raw": "{\n    \"id\": \"basket1\",\n    \"items\": [\n        {\n            \"id\": 17,\n            \"productName\": \"Angular Purple Boots\",\n            \"price\": 1,\n            \"quantity\": 3,\n            \"pictureUrl\": \"https://localhost:5001/images/products/boot-ang2.png\",\n            \"brand\": \"Angular\",\n            \"type\": \"Boots\"\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1499,7 +1540,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"basketId\": \"order1\",\n  \"deliveryMethodId\": 1,\n  \"shipToAddress\": \n    {\n      \"firstName\": \"Bob\",\n      \"lastName\": \"Bobbity\",\n      \"street\": \"10 The Street\",\n      \"city\": \"New York\",\n      \"state\": \"NY\",\n      \"country\": \"USA\",\n      \"zipcode\": \"90250\"\n    }\n}",
+							"raw": "{\n  \"basketId\": \"basket1\",\n  \"deliveryMethodId\": 1,\n  \"shipToAddress\": \n    {\n      \"firstName\": \"Bob\",\n      \"lastName\": \"Bobbity\",\n      \"street\": \"10 The Street\",\n      \"city\": \"New York\",\n      \"state\": \"NY\",\n      \"country\": \"USA\",\n      \"zipcode\": \"90250\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1591,27 +1632,69 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/api/orders/4",
+							"raw": "{{url}}/api/orders/1",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"orders",
-								"4"
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get DeliveryMethods",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{bob_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/orders/deliveryMethods",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"deliveryMethods"
 							]
 						}
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
-			"name": "Section 20 - Payments",
+			"name": "Section 21 - Payments",
 			"item": [
 				{
-					"name": "Create Basket",
+					"name": "Update Basket",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1624,7 +1707,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": \"order2\",\n    \"items\": [\n        {\n            \"id\": 4,\n            \"productName\": \".NET Black & White Mug\",\n            \"price\": 8.5,\n            \"quantity\": 20,\n            \"pictureUrl\": \"https://localhost:5001/images/products/2.png\",\n            \"brand\": \".NET\",\n            \"type\": \"USB Memory Stick\"\n        }\n    ],\n    \"deliveryMethodId\": 2,\n    \"clientSecret\": \"pi_1G5975BMsPE8xicURv2SKARI_secret_FEfsGr067ahgWalLGmPCGsq3r\",\n    \"paymentIntentId\": \"pi_1G5975BMsPE8xicURv2SKARI\"\n}",
+							"raw": "{\n    \"id\": \"basket1\",\n    \"items\": [\n        {\n            \"id\": 17,\n            \"productName\": \"Angular Purple Boots\",\n            \"price\": 1,\n            \"quantity\": 4,\n            \"pictureUrl\": \"https://localhost:5001/images/products/boot-ang2.png\",\n            \"brand\": \"Angular\",\n            \"type\": \"Boots\"\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1671,14 +1754,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/api/payments/order2",
+							"raw": "{{url}}/api/payments/basket1",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"payments",
-								"order2"
+								"basket1"
 							]
 						}
 					},
@@ -1711,14 +1794,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/api/payments/order2",
+							"raw": "{{url}}/api/payments/basket1",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"payments",
-								"order2"
+								"basket1"
 							]
 						}
 					},
@@ -1763,15 +1846,13 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "58a82ddd-3fe8-407e-a15a-25d0c685d368",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1781,7 +1862,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "8dd12dd3-bdf0-41c7-8125-73769c956363",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1791,11 +1871,8 @@
 	],
 	"variable": [
 		{
-			"id": "a72d6c6a-337d-4dff-8835-c91b14cacbd3",
 			"key": "url",
-			"value": "https://localhost:5001",
-			"type": "string"
+			"value": "https://localhost:5001"
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
