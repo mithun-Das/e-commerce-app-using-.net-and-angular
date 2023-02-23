@@ -24,10 +24,24 @@ export class BasketService {
 
   constructor(private http: HttpClient) {}
 
+  createPaymentIntent() {
+    return this.http
+      .post<Basket>(
+        this.baseUrl + 'payments/' + this.getCurrentBasketValue().id,
+        {}
+      )
+      .pipe(
+        map((basket) => {
+          this.basketSource.next(null);
+          console.log(basket);
+        })
+      );
+  }
+
   setShippingPrice(deliveryMethod: DeliveryMethod) {
     const basket = this.getCurrentBasketValue();
     this.shipping = deliveryMethod.price;
-    if(basket){
+    if (basket) {
       basket.deliveryMethodId = deliveryMethod.id;
       this.setBasket(basket);
     }
