@@ -31,3 +31,17 @@
 	   And we ourselves are not going to be able to access that card number.
 	   And nor is any other malicious JavaScript because of the security functionality that Stripe have implemented
 	   inside that JavaScript.
+
+
+--------------> Section-21: Part-262 -> Adding stripe elements to the components <---------------
+
+=> Now, there is a kind of simpler approach to using this.
+   But would use stripes styling and we'd have an all in one kind of input.
+   And the reason for the separate inputs is so that we can stick with our bootstrap fluting, label,
+   styling and control each of these elements individually.
+   So it's a little bit more work, but the end result is that we've got control over how things are going
+   to look and how we validate each of these inputs as well.
+
+
+=> Credit Card Validation
+   src: https://www.ibm.com/docs/en/order-management-sw/9.3.0?topic=cpms-handling-credit-cards
