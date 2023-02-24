@@ -16,3 +16,18 @@
    what we're going to take a look at is very standard shopping cart where we expect people to pay
    for their goods via credit card or bank debit card, and Stripe is going to allow us to do that.
    (Don't got this point) 
+
+
+
+--------------> Section-21: Part-261 -> Implementing stripe elements <---------------
+
+
+->    <div class="form-control" #cardNumber>
+           <label>Card Number</label>
+      </div>
+
+ 	=> Now, the idea of this is that we're going to use Stripe elements and it's going to replace what's inside
+	   this div with a stripe element that's going to allow the user to securely input their card number.
+	   And we ourselves are not going to be able to access that card number.
+	   And nor is any other malicious JavaScript because of the security functionality that Stripe have implemented
+	   inside that JavaScript.
