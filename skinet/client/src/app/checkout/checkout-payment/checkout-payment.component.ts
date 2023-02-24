@@ -30,6 +30,7 @@ export class CheckoutPaymentComponent implements OnInit {
   cardCvc?: StripeCardCvcElement;
   publishableKey =
     'pk_test_51Mc0PxIfd8QYIl1PO0RCR2b2v8n4KFEdFUmjzZh1h1DWAr3xCLQCOpCA8d8eMylRvibFxnfCKKcNmUqP1k9FPrEI00GbbVDlVa';
+  public cardErrors: any;
 
   constructor(
     private basketService: BasketService,
@@ -46,12 +47,33 @@ export class CheckoutPaymentComponent implements OnInit {
       if (elements) {
         this.cardNumber = elements.create('cardNumber');
         this.cardNumber.mount(this.cardNumberElement?.nativeElement);
+        this.cardNumber.on('change', (event) => {
+          if (event.error) {
+            this.cardErrors = event.error.message;
+          } else {
+            this.cardErrors = null;
+          }
+        });
 
         this.cardExpiry = elements.create('cardExpiry');
         this.cardExpiry.mount(this.cardExpiryElement?.nativeElement);
+        this.cardExpiry.on('change', (event) => {
+          if (event.error) {
+            this.cardErrors = event.error.message;
+          } else {
+            this.cardErrors = null;
+          }
+        });
 
         this.cardCvc = elements.create('cardCvc');
         this.cardCvc.mount(this.cardCvcElement?.nativeElement);
+        this.cardCvc.on('change', (event) => {
+          if (event.error) {
+            this.cardErrors = event.error.message;
+          } else {
+            this.cardErrors = null;
+          }
+        });
       }
     });
   }

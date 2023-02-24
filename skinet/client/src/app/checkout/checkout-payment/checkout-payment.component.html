@@ -7,24 +7,24 @@
     <div class="row mb-3">
         <div class="col-6">
             <div class="form-floating">
-                <div class="form-control" #cardNumber>
-                    <label>Card Number</label>
-                </div>
+                <div class="form-control" #cardNumber></div>
+                <label>Card Number</label>
+                <span class="text-danger">{{cardErrors}}</span>
             </div>
         </div>
         <div class="col-3">
             <div class="form-floating">
-                <div class="form-control" #cardExpiry>
-                    <label>Card Expiry</label>
-                </div>
+                <div class="form-control" #cardExpiry></div>
+                <label>Card Expiry</label>
             </div>
+
         </div>
         <div class="col-3">
-            <div class="form-floating">
-                <div class="form-control" #cardCvc>
-                    <label>Card Cvc</label>
-                </div>
+            <div class="form-floating"></div>
+            <div class="form-control" #cardCvc>
+                <label>Card Cvc</label>
             </div>
+
         </div>
     </div>
 </div>
