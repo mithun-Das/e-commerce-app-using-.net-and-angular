@@ -31,7 +31,7 @@ export class BasketService {
       )
       .pipe(
         map((basket) => {
-          this.basketSource.next(null);
+          this.basketSource.next(basket);
         })
       );
   }

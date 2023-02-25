@@ -45,3 +45,15 @@
 
 => Credit Card Validation
    src: https://www.ibm.com/docs/en/order-management-sw/9.3.0?topic=cpms-handling-credit-cards
+
+
+
+--------------> Section-21: Part-265 -> Submitting the payment <---------------
+
+-> Exclamation(!) mark in typescript
+
+-> 42....42 is stripe test card
+   src: https://stripe.com/docs/testing
+
+-> Shouldn't we submit confirmcardpayment before create order?
+   Because stripe card payment can fail.
