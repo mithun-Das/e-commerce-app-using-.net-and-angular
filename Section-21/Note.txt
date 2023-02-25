@@ -57,3 +57,9 @@
 
 -> Shouldn't we submit confirmcardpayment before create order?
    Because stripe card payment can fail.
+
+
+--------------> Section-21: Part-266 -> Testing card failures <---------------
+
+-> Test card
+   https://stripe.com/docs/testing 
