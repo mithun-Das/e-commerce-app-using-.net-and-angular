@@ -9,13 +9,14 @@ public class Order : BaseEntity
     public Order() { }
 
     public Order(string buyerEmail, Address shipToAddress, DeliveryMethod deliveryMethod,
-        IReadOnlyList<OrderItem> orderItems, decimal subTotal)
+        IReadOnlyList<OrderItem> orderItems, decimal subTotal, string paymentIntentId)
     {
         this.BuyerEmail = buyerEmail;
         this.ShipToAddres = shipToAddress;
         this.DeliveryMethod = deliveryMethod;
         this.OrderItems = orderItems;
         this.SubTotal = subTotal;
+        this.PaymentIntentId = paymentIntentId;
     }
 
     public string BuyerEmail { get; set; }
