@@ -30,6 +30,9 @@ export class CheckoutPaymentComponent implements OnInit {
   cardNumber?: StripeCardNumberElement;
   cardExpiry?: StripeCardExpiryElement;
   cardCvc?: StripeCardCvcElement;
+  cardNumberComplete = false;
+  cardExpiryComplete = false;
+  cardCvcComplete = false;
   publishableKey =
     'pk_test_51Mc0PxIfd8QYIl1PO0RCR2b2v8n4KFEdFUmjzZh1h1DWAr3xCLQCOpCA8d8eMylRvibFxnfCKKcNmUqP1k9FPrEI00GbbVDlVa';
   public cardErrors: any;
@@ -51,6 +54,7 @@ export class CheckoutPaymentComponent implements OnInit {
         this.cardNumber = elements.create('cardNumber');
         this.cardNumber.mount(this.cardNumberElement?.nativeElement);
         this.cardNumber.on('change', (event) => {
+          this.cardNumberComplete = event.complete;
           if (event.error) {
             this.cardErrors = event.error.message;
           } else {
@@ -61,6 +65,7 @@ export class CheckoutPaymentComponent implements OnInit {
         this.cardExpiry = elements.create('cardExpiry');
         this.cardExpiry.mount(this.cardExpiryElement?.nativeElement);
         this.cardExpiry.on('change', (event) => {
+          this.cardExpiryComplete = event.complete;
           if (event.error) {
             this.cardErrors = event.error.message;
           } else {
@@ -71,6 +76,7 @@ export class CheckoutPaymentComponent implements OnInit {
         this.cardCvc = elements.create('cardCvc');
         this.cardCvc.mount(this.cardCvcElement?.nativeElement);
         this.cardCvc.on('change', (event) => {
+          this.cardCvcComplete = event.complete;
           if (event.error) {
             this.cardErrors = event.error.message;
           } else {
@@ -79,6 +85,15 @@ export class CheckoutPaymentComponent implements OnInit {
         });
       }
     });
+  }
+
+  get paymentFormComplete() {
+    return (
+      this.checkoutForm?.get('paymentForm')?.valid &&
+      this.cardNumberComplete &&
+      this.cardExpiryComplete &&
+      this.cardCvcComplete
+    );
   }
 
   private async createOrder(basket: Basket | null) {
@@ -116,7 +131,7 @@ export class CheckoutPaymentComponent implements OnInit {
       } else {
         this.toastr.error(paymentResult.error.message);
       }
-    } catch (error : any) {
+    } catch (error: any) {
       console.log(error);
       this.toastr.show(error.message);
     } finally {
