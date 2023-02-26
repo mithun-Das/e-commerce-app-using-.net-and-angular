@@ -70,3 +70,9 @@
 -> Now the endpoint is going to be for anonymous access.
    We do not want Stripe to have to somehow log in to our API and send up a bearer token to get to this endpoint.
    We need this to be anonymous.
+
+
+--------------> Section-21: Part-273 -> Updating the payments service <---------------
+
+
+-> What happen if client loose connection with stripe server after the payment call (confirmPaymentWithStripe(basket))

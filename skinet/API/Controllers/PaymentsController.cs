@@ -50,10 +50,14 @@ namespace API.Controllers
                 case "payment_intent.succeeded":
                     intent = (PaymentIntent) stripeEvent.Data.Object;
                     this._logger.LogInformation("Payment Succeeded: ", intent.Id);
+                    order = await this._paymentService.UpdateOrderPaymentSucceeded(intent.Id);
+                    this._logger.LogInformation("Order updated to payment received: ", order.Id);
                     break;
                 case "payment_intent.payment_failed":
                     intent = (PaymentIntent)stripeEvent.Data.Object;
                     this._logger.LogInformation("Payment Failed: ", intent.Id);
+                    order = await this._paymentService.UpdateOrderPaymentFailed(intent.Id);
+                    this._logger.LogInformation("Order updated to payment failed: ", order.Id);
                     break;
             }
 
