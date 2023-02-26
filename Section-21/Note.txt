@@ -76,3 +76,8 @@
 
 
 -> What happen if client loose connection with stripe server after the payment call (confirmPaymentWithStripe(basket))
+
+
+--------------> Section-21: Part-274 -> Testing our webhooks with the stripe CLI <---------------
+
+-> https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18138566#questions/11441208
