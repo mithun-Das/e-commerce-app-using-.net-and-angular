@@ -1,5 +1,7 @@
 
+-> We implemented SCA in this lesson and it is globally accepted
 
 -> Future Task
 
 	=> Learn more about this
+	=> What is 3D secure

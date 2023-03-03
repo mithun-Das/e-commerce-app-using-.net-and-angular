@@ -46,6 +46,9 @@
 => Credit Card Validation
    src: https://www.ibm.com/docs/en/order-management-sw/9.3.0?topic=cpms-handling-credit-cards
 
+=> Mount
+   src: https://stripe.com/docs/js/element/mount
+
 
 
 --------------> Section-21: Part-265 -> Submitting the payment <---------------
@@ -65,6 +68,14 @@
    https://stripe.com/docs/testing 
 
 
+
+---------> Section-21: Part-268 -> Making the submission a better experience <---------
+
+
+-> Connection Lost After Making Stripe Payment Call
+   src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18138538#questions/19326810
+
+
 --------------> Section-21: Part-272 -> Webhooks <---------------
 
 -> Now the endpoint is going to be for anonymous access.
@@ -72,12 +83,20 @@
    We need this to be anonymous.
 
 
---------------> Section-21: Part-273 -> Updating the payments service <---------------
-
-
--> What happen if client loose connection with stripe server after the payment call (confirmPaymentWithStripe(basket))
-
-
 --------------> Section-21: Part-274 -> Testing our webhooks with the stripe CLI <---------------
 
 -> https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18138566#questions/11441208
+
+
+--------------> Section-21: Part-275 -> Summary of section 21 <---------------
+
+-> Another question you might have is what if the Web hook fails?
+   I will have angry customers and this is a reasonable point.
+   It's not covered on this course, but health status checks should be implemented to avoid.
+   This strike will also resend payment and confirmation for up to three days on a live site.
+   It will do it for a few hours on a test site, but on a life site, it will keep resending that payment
+   in confirmation for up to three days.
+   And if your API doesn't send back an acknowledgement that it's received that confirmation, it will
+   keep trying to resend that payment intent.
+   So you've got some cover for a little while, but monitoring of the availability of your Web hook would be a good thing to do.
+   And it's not something we're covering on this particular course either.

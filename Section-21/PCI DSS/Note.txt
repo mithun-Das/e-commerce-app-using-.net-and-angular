@@ -5,3 +5,7 @@
    And it offers increased protection for customers and a reduced risk of data 
    breaches involving personal card data is basically designed to protect people's credit cards and give
    extra protection, which encourages confidence when buying things online.
+
+
+-> can stripe take care of concern of PCI DSS?
+   src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/18138436#questions/10483794
