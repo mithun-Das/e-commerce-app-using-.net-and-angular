@@ -19,6 +19,7 @@ public static class ApplicationServicesExtensions
         services.AddScoped<IOrderService, OrderService>();
         services.AddScoped<IPaymentService, PaymentService>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddSingleton<IResponseCacheService, ResponseCacheService>();
 
         services.Configure<ApiBehaviorOptions>(options =>
         {
