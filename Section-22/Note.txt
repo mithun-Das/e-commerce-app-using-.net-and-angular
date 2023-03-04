@@ -4,4 +4,27 @@
 
 => Future Task
 
-	-> Required execution time analysis for Redis vs Static Database 
+	-> Required execution time analysis for Redis vs Static Database
+
+
+--------------> Section-22: Part-278 -> Creating a cache attribute class <---------------
+
+-> we're going to be using this async action filter and filters allow code to be run before or after
+   specific stages and request processing pipeline.And we've got the opportunity to run code immediately 
+   before an action method is called and after a method has been executed.
+   And we're going to do both because before the action method is called, we're going to want to see if
+   we've got the thing that they're asking for inside our casche.
+   And if we don't have it inside our cache, then we're going to execute the request and then the results
+   of that we're going to put into our cache.
+   So the next person who comes in asking for the same thing, we're just going to get the result from
+   the cache.
+
+
+-> And then instead of letting our request go to the controller, which is then going to ask our database
+   for the response, we're simply going to retrieve this or we are retrieving it from memory and returning
+   it straight to the client.
+   So we're going to create our own content response that we're going to send directly from here.
+
+=> Future Task
+
+	-> Learn more about the CachedAttribute class
