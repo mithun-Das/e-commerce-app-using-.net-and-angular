@@ -25,6 +25,29 @@
    it straight to the client.
    So we're going to create our own content response that we're going to send directly from here.
 
+
 => Future Task
 
 	-> Learn more about the CachedAttribute class
+	-> Implement and Learn more about custom attribute class
+
+
+--------------> Section-22: Part-279 -> Testing the caching <---------------
+
+
+-> Time Required For Product Type in Database: 119 ms
+   Time Required For Product Brand in Database: 117 ms
+   Time Required For Getting Product in Database: 13 ms
+
+   Time Required For /api/products/brands In Redis: 12 ms
+   Time Required For /api/products/types In Redis: 12 ms
+   Time Required For /api/products In Redis: 2 ms
+
+
+   Time Required For Product Type in Database: 119 ms
+   Time Required For Product Brand in Database: 121 ms
+   Time Required For Getting Single Product in Database: 17 ms
+
+   Time Required For /api/products/types In Redis: 10 ms
+   Time Required For /api/products/brands In Redis: 9 ms
+   Time Required For /api/products In Redis: 1 ms

@@ -38,6 +38,7 @@ public class ProductsController : BaseApiController
     /// <Summary>
     /// Get The Product List
     /// </Summary>
+    [Cached(600)]
     [HttpGet]
     [Authorize]
     public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(CancellationToken cancellationToken, 
@@ -61,6 +62,7 @@ public class ProductsController : BaseApiController
     /// </Summary>
     /// <param name="id"></param>
     /// <returns> Product with specific id </returns>
+    [Cached(600)]
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -72,12 +74,13 @@ public class ProductsController : BaseApiController
 
         if (product == null) return NotFound(new ApiResponse(400));
 
-        return this._mapper.Map<Product, ProductToReturnDto>(product);
+        return Ok(this._mapper.Map<Product, ProductToReturnDto>(product));
     }
 
     /// <Summary>
     /// Get The Product Brands
     /// </Summary>
+    [Cached(600)]
     [HttpGet("brands")]
     public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands(CancellationToken cancellationToken)
     {
@@ -89,6 +92,7 @@ public class ProductsController : BaseApiController
     /// <Summary>
     /// Get The Product Types
     /// </Summary>
+    [Cached(600)]
     [HttpGet("types")]
     public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes(CancellationToken cancellationToken)
     {
