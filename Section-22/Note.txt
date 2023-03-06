@@ -51,3 +51,10 @@
    Time Required For /api/products/types In Redis: 10 ms
    Time Required For /api/products/brands In Redis: 9 ms
    Time Required For /api/products In Redis: 1 ms
+
+
+
+--------------> Section-22: Part-282 -> Caching on the client part 3 <---------------
+
+-> ngModel is part of angular form module
+   That's why we imported FormModule in Shared Module 

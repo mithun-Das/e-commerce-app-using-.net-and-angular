@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { IBrand } from '../shared/models/brand';
 import { IPagination } from '../shared/models/pagination';
 import { IType } from '../shared/models/productType';
-import { map, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { ShopParams } from '../shared/models/shopParams';
 import { IProduct } from '../shared/models/product';
 
@@ -17,10 +17,23 @@ export class ShopService {
   types: IType[] = [];
   pagination?: IPagination<IProduct[]>;
   shopParams = new ShopParams();
+  productCache = new Map<string, IPagination<IProduct[]>>();
 
   constructor(private http: HttpClient) {}
 
-  getProducts() {
+  getProducts(useCache = true) : Observable<IPagination<IProduct[]>> {
+
+    if(!useCache) this.productCache = new Map();
+
+    if(this.productCache.size > 0 && useCache){
+      if(this.productCache.has(Object.values(this.shopParams).join("-"))){
+        this.pagination = this.productCache.get(Object.values(this.shopParams).join("-"));
+        if(this.pagination) {
+          return of(this.pagination);
+        }
+      }
+    }
+
     let params = new HttpParams();
 
     if (this.shopParams.brandId !== 0) {
@@ -46,7 +59,7 @@ export class ShopService {
       })
       .pipe(
         map((response) => {
-          this.products = [...this.products, ...response.body.data];
+          this.productCache.set(Object.values(this.shopParams).join("-"), response.body);
           this.pagination = response.body;
           return response.body;
         })
@@ -62,9 +75,13 @@ export class ShopService {
   }
 
   getProduct(id: number) {
-    const product = this.products.find((x) => x.id == id);
+    const product = [...this.productCache.values()]
+    .reduce((acc, paginatedResult) => {
+      return { ...acc, ...paginatedResult.data.find(x => x.id == id) }
+    }, {} as IProduct);
+    console.log(product);
 
-    if (product != null) return of(product);
+    if (Object.keys(product).length !== 0) return of(product);
 
     return this.http.get<IProduct>(this.baseUrl + 'products/' + id);
   }
