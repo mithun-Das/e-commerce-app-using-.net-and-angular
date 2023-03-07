@@ -26,9 +26,9 @@ builder.Services.AddApplicationService();
 builder.Services.AddIdentityServices(builder.Configuration);
 builder.Services.AddSwaggerDocumentation();
 builder.Services.AddDbContext<StoreContext>
-    (x => x.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    (x => x.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddDbContext<AppIdentityDbContext>
-    (x => x.UseSqlite(builder.Configuration.GetConnectionString("IdentityConnection")));
+    (x => x.UseNpgsql(builder.Configuration.GetConnectionString("IdentityConnection")));
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 builder.Services.AddCors(opt =>
 {
