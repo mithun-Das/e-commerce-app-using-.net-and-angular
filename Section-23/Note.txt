@@ -19,3 +19,12 @@
 
 	=> Learn more about webpack
 	=> What are "Initial chunk files" and "Lazy chunk files" when angular runs
+
+
+--------------> Section-23: Part-288 -> Installing PostgreSQL <---------------
+
+
+-> Future Task
+
+	=> Learn more about docker
+	=> Find docker file in dating app
