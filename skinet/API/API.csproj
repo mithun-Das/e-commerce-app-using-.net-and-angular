@@ -7,6 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Content\images\products\boot-ang1.png" />
+    <Content Include="Content\images\products\boot-ang2.png" />
+    <Content Include="Content\images\products\boot-core1.png" />
+    <Content Include="Content\images\products\boot-core2.png" />
+    <Content Include="Content\images\products\boot-redis1.png" />
+    <Content Include="Content\images\products\glove-code1.png" />
+    <Content Include="Content\images\products\glove-code2.png" />
+    <Content Include="Content\images\products\glove-react1.png" />
+    <Content Include="Content\images\products\glove-react2.png" />
+    <Content Include="Content\images\products\hat-core1.png" />
+    <Content Include="Content\images\products\hat-react1.png" />
+    <Content Include="Content\images\products\hat-react2.png" />
+    <Content Include="Content\images\products\sb-ang1.png" />
+    <Content Include="Content\images\products\sb-ang2.png" />
+    <Content Include="Content\images\products\sb-core1.png" />
+    <Content Include="Content\images\products\sb-core2.png" />
+    <Content Include="Content\images\products\sb-react1.png" />
+    <Content Include="Content\images\products\sb-ts1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.1" />
@@ -19,6 +40,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
