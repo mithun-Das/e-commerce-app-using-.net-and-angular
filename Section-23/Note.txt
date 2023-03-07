@@ -1,0 +1,21 @@
+
+--------------> Section-23: Part-286 -> Angular build configuration <---------------
+
+-> environment.apiUrl
+   Initially we imported it from environment.ts file. But when we run build then our environment.ts file 
+   will be replaced by environment.prod.ts
+
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+
+
+-> Our first app.UseStaticFiles will be used for angular application
+   Second one will be used for images
+
+-> Future Task:
+
+	=> Learn more about webpack
+	=> What are "Initial chunk files" and "Lazy chunk files" when angular runs
