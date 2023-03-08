@@ -28,3 +28,42 @@
 
 	=> Learn more about docker
 	=> Find docker file in dating app
+
+
+--------------> Section-23: Part-291 -> Pre deployment work <---------------
+
+
+-> var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+	
+	Assembly => Represents an assembly, which is reusable, versionable, and self-describing building block of a common language runtime application.
+	GetExecutingAssembly => Get the assembly that the current code is running from.
+
+-> Verbatim Strings(@)
+   src: https://www.tutorialsteacher.com/csharp/csharp-string
+
+-> After Including the seed json files in none tag in csproj file we ran the publish command.
+   This time the json files got included in publish folder/build
+
+-> None vs Content in csproj
+   src: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/25242672#questions/19360090
+
+-> Future Task***
+
+	=> Learn more about appsetting
+	   How to maintain env. specific appsetting during publish
+	   src: https://www.youtube.com/watch?v=x8jNX1nb_og
+
+	=> How to publish .net application via Visual Studio
+
+	=> Learn more about .net application deployment
+	   src: https://learn.microsoft.com/en-us/dotnet/core/deploying/deploy-with-vs?tabs=vs156
+	   src: https://learn.microsoft.com/en-us/dotnet/core/deploying/
+
+	=> dotnet publish -c Release -o publish skinet.sln
+   	   Why we don't get publish option in solution level in Visual Studio
+
+	=> What is the difference of publish between command and Visual Studio
+
+	=> Learn more about csproj file
+   	   src(ItemGroup, Content): https://learn.microsoft.com/en-us/aspnet/web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file#items-and-item-groups
+   	   src(CopyToPublishDirectory): https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#copytopublishdirectory
